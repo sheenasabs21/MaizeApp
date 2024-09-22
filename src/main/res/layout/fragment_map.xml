@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- WebView stays within the screen bounds -->
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/text_current_location" />
+
+    <!-- TextView just above the buttons -->
+    <TextView
+        android:id="@+id/text_current_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="#e0e0e0"
+        android:textSize="14sp"
+        android:textColor="#000"
+        android:layout_above="@+id/button_container" />
+
+    <!-- Buttons at the bottom with no space above them -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:background="#f0f0f0">
+
+        <Button
+            android:id="@+id/button_show_coords"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Show Tapped Coordinates"
+            android:textColor="#841584" />
+
+        <Button
+            android:id="@+id/button_clear_map"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Clear Map"
+            android:textColor="#841584" />
+
+    </LinearLayout>
+
+    <!-- Coordinates layout above the text -->
+    <LinearLayout
+        android:id="@+id/layout_tapped_coords"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp"
+        android:background="#fff"
+        android:layout_above="@+id/text_current_location" />
+
+</RelativeLayout>
